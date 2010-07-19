@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>todo</title>
+	<link rel="stylesheet" type="text/css" href="/todo.css" />
+	<script type="text/javascript" src="/js/jquery-1.4.2.js"></script>
+	<script type="text/javascript" src="/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/js/mg.sam.js"></script>
+  </head>
+  
+  <body>
+	<div id="hint">
+	  <?cs if: Output.rcode == 1 ?>
+	  <p>通过本域 cookie 验证， 你已经登录。 </p>
+	  <p>
+		samuser: <?cs var: Output.samuser ?> <br />
+		samkey: <?cs var: Output.samkey ?>
+	  </p>
+	  <p><a href="javascript:void(0);" id="logouts">登出</a></p>
+	  
+	  <?cs elif: Output.rcode == 2 ?>
+	  <p>
+		本域验证失败，请等待 login 下验证。
+		<script>
+		  mg.sam.detect();
+		</script>
+	  </p>
+
+	  <?cs else ?>
+	  <h3><?cs var: Output.errmsg ?></3>
+	  
+	  <?cs /if ?>
+
+	</div>
+
+	
+  </body>
+  
+</html>

@@ -1,0 +1,5 @@
+Config {
+	trace_level = 7
+}
+
+Dbsn = mysql: hostaddr=192.168.8.186 user=root password=123 dbname=sam
