@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 Simple Access Manager (designed by gfeng http://github.com/gfeng )
+=======
+Simple Access Manager (designed by [gfeng]<http://github.com/gfeng>)
+>>>>>>> 0ff46e1b75addd3ccbe7f433749086729aa46dd2
 
 Access Manager(exclude regist) for multi domain sites.
