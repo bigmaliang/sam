@@ -6,8 +6,9 @@ __BEGIN_DECLS
 
 #define SITE_DOMAIN "mangoq.com"
 #define SITE_CONFIG "/home/bigml/web/sam/config.hdf"
+#define P3P_HEADER	"P3P: CP=\"CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR\"\n"
 #define DB_DSN		(hdf_get_value(g_cfg, "Dbsn", NULL))
-#define LEN_SKEY	 32
+#define LEN_SKEY	128
 
 enum {
 	SAM_ERR_NEEDINPUT = 1,

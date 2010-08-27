@@ -46,11 +46,13 @@ int main(int argc, char **argv, char **envp)
 			hdf_set_int_value(cgi->hdf, PRE_OUTPUT".errcode", SAM_ERR_PARSE);
 			goto opfinish;
 		}
+#if 0
 		if (mutil_client_attack_cookie(cgi->hdf, "login", 30, 60)) {
 			mtc_err("client attack");
 			hdf_set_int_value(cgi->hdf, PRE_OUTPUT".errcode", SAM_ERR_NEEDREST);
 			goto opfinish;
 		}
+#endif
 
 		u = hdf_get_value(cgi->hdf, PRE_COOKIE".samuser", NULL);
 		s = hdf_get_value(cgi->hdf, PRE_COOKIE".samkey", NULL);
@@ -76,6 +78,7 @@ int main(int argc, char **argv, char **envp)
 			goto opfinish;
 		}
 
+		cgiwrap_write(P3P_HEADER, strlen(P3P_HEADER));
 		cgi_cookie_set(cgi, "samuser", u, NULL, SITE_DOMAIN, NULL, 1, 0);
 		cgi_cookie_set(cgi, "samkey", s, NULL, SITE_DOMAIN, NULL, 1, 0);
 #if 0

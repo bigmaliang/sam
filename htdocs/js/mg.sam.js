@@ -1,4 +1,3 @@
-//; var g_site_domain = "kaiwuonline.com";
 ; var mg = mg || {};
 mg.sam = {
 	version: "1.0",
